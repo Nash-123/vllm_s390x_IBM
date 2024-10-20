@@ -6,6 +6,7 @@ from vllm.sequence import (VLLM_INVALID_TOKEN_ID, Logprob, SamplingParams,
 from .tokenizer import AnyTokenizer
 from .tokenizer_group import BaseTokenizerGroup
 import logging
+import numpy as np
 import sys
 
 logging.basicConfig(level=logging.DEBUG)
@@ -248,9 +249,12 @@ def convert_prompt_ids_to_tokens(
 # under Apache 2.0 license
 
 def process_tokens(tokens):
+    # Convert tokens list to numpy nd array
+    tokens_array = np.array(tokens, dtype=np.int32)
     if sys.byteorder == 'big':
-        tokens = tokens.byteswap()
-    return tokens
+        # byteswap and again convert nd array to list
+        tokens_array = tokens_array.byteswap().newbyteorder()
+    return tokens_array.tolist()
 
 def detokenize_incrementally(
     tokenizer: AnyTokenizer,
