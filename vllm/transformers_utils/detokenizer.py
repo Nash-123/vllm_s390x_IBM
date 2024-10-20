@@ -108,7 +108,7 @@ class Detokenizer:
         Returns:
             The number of characters added to the output text.
         """
-        logger.debug(f"Decoding sequence {seq.id} with sampling params {prms}")
+        logger.debug(f"Decoding sequence with sampling params {prms}")
 
         all_input_ids = seq.get_token_ids()
         token_id_generated_this_iteration = all_input_ids[-1]

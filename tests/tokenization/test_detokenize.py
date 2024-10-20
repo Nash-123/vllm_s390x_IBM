@@ -16,14 +16,6 @@ TRUTH = [
 TOKENIZERS = [
     "facebook/opt-125m",
     "gpt2",
-    "bigcode/tiny_starcoder_py",
-    "EleutherAI/gpt-j-6b",
-    "EleutherAI/pythia-70m",
-    "bigscience/bloom-560m",
-    "mosaicml/mpt-7b",
-    "tiiuae/falcon-7b",
-    "meta-llama/Llama-2-7b-hf",
-    "codellama/CodeLlama-7b-hf",
 ]
 
 

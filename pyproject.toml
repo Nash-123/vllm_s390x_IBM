@@ -95,3 +95,8 @@ markers = [
     "core_model: run this model test in each PR instead of just daily",
     "distributed_2_gpus: run this test only in distributed tests for 2 GPUs",
 ]
+log_cli = true
+log_cli_level = "DEBUG"
+log_cli_format = "%(asctime)s [%(levelname)s] %(message)s (%(filename)s:%(lineno)s)"
+log_cli_date_format = "%Y-%m-%d %H:%M:%S"
+
