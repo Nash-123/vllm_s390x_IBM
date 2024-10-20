@@ -5,7 +5,11 @@ from vllm.sequence import (VLLM_INVALID_TOKEN_ID, Logprob, SamplingParams,
 
 from .tokenizer import AnyTokenizer
 from .tokenizer_group import BaseTokenizerGroup
+import logging
+import sys
 
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
 
 class Detokenizer:
     """Provides methods to decode the output of a model into text."""
@@ -103,6 +107,8 @@ class Detokenizer:
         Returns:
             The number of characters added to the output text.
         """
+        logger.debug(f"Decoding sequence {seq.id} with sampling params {prms}")
+
         all_input_ids = seq.get_token_ids()
         token_id_generated_this_iteration = all_input_ids[-1]
         tokenizer = self.get_tokenizer_for_seq(seq)
@@ -128,6 +134,8 @@ class Detokenizer:
              skip_special_tokens=prms.skip_special_tokens,
              spaces_between_special_tokens=prms.spaces_between_special_tokens,
          )
+        
+        logger.debug(f"New tokens: {new_tokens}, New decoded text: {new_decoded_token_text}")
 
         # Decode logprobs
         logprobs = seq.output_logprobs[-1]
@@ -157,6 +165,9 @@ class Detokenizer:
 
         seq.tokens.extend(new_tokens)
         seq.prefix_offset = prefix_offset
+
+        logger.debug(f"Updated sequence tokens: {seq.tokens}")
+        logger.debug(f"Updated sequence text: {seq.output_text}")
         seq.read_offset = read_offset
         seq.output_text += new_decoded_token_text
 
@@ -235,6 +246,12 @@ def convert_prompt_ids_to_tokens(
 # Based on
 # https://github.com/huggingface/text-generation-inference/blob/v0.9.4/server/text_generation_server/models/model.py#L62C9-L62C15
 # under Apache 2.0 license
+
+def process_tokens(tokens):
+    if sys.byteorder == 'big':
+        tokens = tokens.byteswap()
+    return tokens
+
 def detokenize_incrementally(
     tokenizer: AnyTokenizer,
     all_input_ids: List[int],
@@ -268,16 +285,29 @@ def detokenize_incrementally(
         spaces_between_special_tokens: Whether to add spaces between special
             tokens.
     """
+    
+    #Logging input tokens and parameters for debugging
+    logger.debug(f"Starting detokenization. Input IDs***************: {all_input_ids}")
+    logger.debug(f"Prefix offset: {prefix_offset}, Read offset*************: {read_offset}")
+    
+    #processing tokens to handle byte order before decoding
+    all_input_ids = process_tokens(all_input_ids)
+    logger.debug(f"Processed tokens after handling byte order: {all_input_ids}")
+
     new_token_id = all_input_ids[-1]
     # This is the first iteration for this sequence
     is_first_iter = prev_tokens is None
     if is_first_iter:
+        logger.debug("First iteration for the sequence.**************")
+
         (prev_tokens, prefix_offset,
          read_offset) = convert_prompt_ids_to_tokens(
              tokenizer,
              all_input_ids[:-1],
              skip_special_tokens=skip_special_tokens)
     assert prev_tokens is not None
+
+    logger.debug(f"Previous tokens: {prev_tokens}************")
 
     # If the new token id is out of bounds, return an empty string.
     if 0 <= new_token_id < len(tokenizer):
@@ -289,6 +319,7 @@ def detokenize_incrementally(
     else:
         new_tokens = [""]
     output_tokens = prev_tokens + new_tokens
+    logger.debug(f"New tokens: {new_tokens}*******************")
 
     # If this is the first iteration, return all tokens.
     if is_first_iter:
@@ -315,13 +346,17 @@ def detokenize_incrementally(
             skip_special_tokens=skip_special_tokens,
             spaces_between_special_tokens=spaces_between_special_tokens,
         )
+    
+    logger.debug(f"Newly decoded text: {new_text}, Prefix text: {prefix_text}**************")
 
     if len(new_text) <= len(prefix_text) or new_text.endswith("�"):
         # utf-8 char at the end means it's a potential unfinished byte sequence
         # from byte fallback tokenization.
         # If it's in the middle, it's probably a real invalid id generated
         # by the model
+        logger.debug("Incomplete byte sequence detected.***************")
         return new_tokens, "", prefix_offset, read_offset
 
     new_text = new_text[len(prefix_text):]
+    logger.debug(f"Final decoded text: {new_text}******************")
     return new_tokens, new_text, read_offset, len(output_tokens)
