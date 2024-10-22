@@ -7,7 +7,7 @@ import torch
 from torch.nn.functional import scaled_dot_product_attention
 from torch.serialization import LoadEndianness
 #torch.serialization.set_default_load_endianness('native')
-torch.serialization.set_default_load_endianness(LoadEndianness.BIG)
+torch.serialization.set_default_load_endianness(LoadEndianness.LITTLE)
 
 from vllm.attention.backends.abstract import (AttentionBackend, AttentionImpl,
                                               AttentionMetadata, AttentionType)
