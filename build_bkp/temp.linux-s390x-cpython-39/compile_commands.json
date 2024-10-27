@@ -1,0 +1,44 @@
+[
+{
+  "directory": "/root/vllm_s390x/vllm/build/temp.linux-s390x-cpython-39",
+  "command": "/usr/local/bin/c++ -DPy_LIMITED_API=3 -DTORCH_EXTENSION_NAME=_C -DUSE_C10D_GLOO -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -D_C_EXPORTS -I/root/vllm_s390x/vllm/csrc -isystem /root/miniconda3/envs/torch/include/python3.9 -isystem /root/miniconda3/envs/torch/lib/python3.9/site-packages/torch/include -isystem /root/miniconda3/envs/torch/lib/python3.9/site-packages/torch/include/torch/csrc/api/include -O2 -g -DNDEBUG -fPIC -fopenmp -DVLLM_CPU_EXTENSION -mvx -mzvector -march=native -mtune=native -D_GLIBCXX_USE_CXX11_ABI=1 -o CMakeFiles/_C.dir/csrc/cpu/activation.cpp.o -c /root/vllm_s390x/vllm/csrc/cpu/activation.cpp",
+  "file": "/root/vllm_s390x/vllm/csrc/cpu/activation.cpp",
+  "output": "CMakeFiles/_C.dir/csrc/cpu/activation.cpp.o"
+},
+{
+  "directory": "/root/vllm_s390x/vllm/build/temp.linux-s390x-cpython-39",
+  "command": "/usr/local/bin/c++ -DPy_LIMITED_API=3 -DTORCH_EXTENSION_NAME=_C -DUSE_C10D_GLOO -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -D_C_EXPORTS -I/root/vllm_s390x/vllm/csrc -isystem /root/miniconda3/envs/torch/include/python3.9 -isystem /root/miniconda3/envs/torch/lib/python3.9/site-packages/torch/include -isystem /root/miniconda3/envs/torch/lib/python3.9/site-packages/torch/include/torch/csrc/api/include -O2 -g -DNDEBUG -fPIC -fopenmp -DVLLM_CPU_EXTENSION -mvx -mzvector -march=native -mtune=native -D_GLIBCXX_USE_CXX11_ABI=1 -o CMakeFiles/_C.dir/csrc/cpu/attention.cpp.o -c /root/vllm_s390x/vllm/csrc/cpu/attention.cpp",
+  "file": "/root/vllm_s390x/vllm/csrc/cpu/attention.cpp",
+  "output": "CMakeFiles/_C.dir/csrc/cpu/attention.cpp.o"
+},
+{
+  "directory": "/root/vllm_s390x/vllm/build/temp.linux-s390x-cpython-39",
+  "command": "/usr/local/bin/c++ -DPy_LIMITED_API=3 -DTORCH_EXTENSION_NAME=_C -DUSE_C10D_GLOO -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -D_C_EXPORTS -I/root/vllm_s390x/vllm/csrc -isystem /root/miniconda3/envs/torch/include/python3.9 -isystem /root/miniconda3/envs/torch/lib/python3.9/site-packages/torch/include -isystem /root/miniconda3/envs/torch/lib/python3.9/site-packages/torch/include/torch/csrc/api/include -O2 -g -DNDEBUG -fPIC -fopenmp -DVLLM_CPU_EXTENSION -mvx -mzvector -march=native -mtune=native -D_GLIBCXX_USE_CXX11_ABI=1 -o CMakeFiles/_C.dir/csrc/cpu/cache.cpp.o -c /root/vllm_s390x/vllm/csrc/cpu/cache.cpp",
+  "file": "/root/vllm_s390x/vllm/csrc/cpu/cache.cpp",
+  "output": "CMakeFiles/_C.dir/csrc/cpu/cache.cpp.o"
+},
+{
+  "directory": "/root/vllm_s390x/vllm/build/temp.linux-s390x-cpython-39",
+  "command": "/usr/local/bin/c++ -DPy_LIMITED_API=3 -DTORCH_EXTENSION_NAME=_C -DUSE_C10D_GLOO -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -D_C_EXPORTS -I/root/vllm_s390x/vllm/csrc -isystem /root/miniconda3/envs/torch/include/python3.9 -isystem /root/miniconda3/envs/torch/lib/python3.9/site-packages/torch/include -isystem /root/miniconda3/envs/torch/lib/python3.9/site-packages/torch/include/torch/csrc/api/include -O2 -g -DNDEBUG -fPIC -fopenmp -DVLLM_CPU_EXTENSION -mvx -mzvector -march=native -mtune=native -D_GLIBCXX_USE_CXX11_ABI=1 -o CMakeFiles/_C.dir/csrc/cpu/utils.cpp.o -c /root/vllm_s390x/vllm/csrc/cpu/utils.cpp",
+  "file": "/root/vllm_s390x/vllm/csrc/cpu/utils.cpp",
+  "output": "CMakeFiles/_C.dir/csrc/cpu/utils.cpp.o"
+},
+{
+  "directory": "/root/vllm_s390x/vllm/build/temp.linux-s390x-cpython-39",
+  "command": "/usr/local/bin/c++ -DPy_LIMITED_API=3 -DTORCH_EXTENSION_NAME=_C -DUSE_C10D_GLOO -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -D_C_EXPORTS -I/root/vllm_s390x/vllm/csrc -isystem /root/miniconda3/envs/torch/include/python3.9 -isystem /root/miniconda3/envs/torch/lib/python3.9/site-packages/torch/include -isystem /root/miniconda3/envs/torch/lib/python3.9/site-packages/torch/include/torch/csrc/api/include -O2 -g -DNDEBUG -fPIC -fopenmp -DVLLM_CPU_EXTENSION -mvx -mzvector -march=native -mtune=native -D_GLIBCXX_USE_CXX11_ABI=1 -o CMakeFiles/_C.dir/csrc/cpu/layernorm.cpp.o -c /root/vllm_s390x/vllm/csrc/cpu/layernorm.cpp",
+  "file": "/root/vllm_s390x/vllm/csrc/cpu/layernorm.cpp",
+  "output": "CMakeFiles/_C.dir/csrc/cpu/layernorm.cpp.o"
+},
+{
+  "directory": "/root/vllm_s390x/vllm/build/temp.linux-s390x-cpython-39",
+  "command": "/usr/local/bin/c++ -DPy_LIMITED_API=3 -DTORCH_EXTENSION_NAME=_C -DUSE_C10D_GLOO -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -D_C_EXPORTS -I/root/vllm_s390x/vllm/csrc -isystem /root/miniconda3/envs/torch/include/python3.9 -isystem /root/miniconda3/envs/torch/lib/python3.9/site-packages/torch/include -isystem /root/miniconda3/envs/torch/lib/python3.9/site-packages/torch/include/torch/csrc/api/include -O2 -g -DNDEBUG -fPIC -fopenmp -DVLLM_CPU_EXTENSION -mvx -mzvector -march=native -mtune=native -D_GLIBCXX_USE_CXX11_ABI=1 -o CMakeFiles/_C.dir/csrc/cpu/pos_encoding.cpp.o -c /root/vllm_s390x/vllm/csrc/cpu/pos_encoding.cpp",
+  "file": "/root/vllm_s390x/vllm/csrc/cpu/pos_encoding.cpp",
+  "output": "CMakeFiles/_C.dir/csrc/cpu/pos_encoding.cpp.o"
+},
+{
+  "directory": "/root/vllm_s390x/vllm/build/temp.linux-s390x-cpython-39",
+  "command": "/usr/local/bin/c++ -DPy_LIMITED_API=3 -DTORCH_EXTENSION_NAME=_C -DUSE_C10D_GLOO -DUSE_DISTRIBUTED -DUSE_RPC -DUSE_TENSORPIPE -D_C_EXPORTS -I/root/vllm_s390x/vllm/csrc -isystem /root/miniconda3/envs/torch/include/python3.9 -isystem /root/miniconda3/envs/torch/lib/python3.9/site-packages/torch/include -isystem /root/miniconda3/envs/torch/lib/python3.9/site-packages/torch/include/torch/csrc/api/include -O2 -g -DNDEBUG -fPIC -fopenmp -DVLLM_CPU_EXTENSION -mvx -mzvector -march=native -mtune=native -D_GLIBCXX_USE_CXX11_ABI=1 -o CMakeFiles/_C.dir/csrc/cpu/torch_bindings.cpp.o -c /root/vllm_s390x/vllm/csrc/cpu/torch_bindings.cpp",
+  "file": "/root/vllm_s390x/vllm/csrc/cpu/torch_bindings.cpp",
+  "output": "CMakeFiles/_C.dir/csrc/cpu/torch_bindings.cpp.o"
+}
+]

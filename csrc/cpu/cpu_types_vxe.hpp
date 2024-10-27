@@ -4,7 +4,9 @@
 
 #include <vecintrin.h>
 #include <cmath>
-#include <torch/all.h>
+#include <torch/torch.h>
+#include <arpa/inet.h>
+
 namespace vec_op {
 
 #define vec_neg(a) (-(a))
@@ -74,11 +76,27 @@ struct BF16Vec8 : public Vec<BF16Vec8> {
 
   __vector signed short reg;
 
-   explicit BF16Vec8(const void *ptr)
+  explicit BF16Vec8(const void *ptr)
       : reg(*(__vector signed short*)ptr) {}
-  explicit BF16Vec8(const FP32Vec8 &);
 
-  void save(void *ptr) const { *reinterpret_cast<__vector signed short *>(ptr) = reg; }
+  explicit BF16Vec8(const FP32Vec8 &);
+  
+  
+  //void save(void *ptr) const { *reinterpret_cast<__vector signed short *>(ptr) = reg; }
+
+  void save(void *ptr) const {
+     
+      std::cout << "Saving BF16Vec8 to memory" << std::endl;
+      // converting vector to array of type signed shorts for handling data element wise
+      const signed short* data = reinterpret_cast<const signed short*>(&reg);
+      signed short* dest = reinterpret_cast<signed short*>(ptr);
+
+      for (int i=0; i < VEC_ELEM_NUM; ++i){
+	   std::cout << "Saving Element[" << i << "]: " << data[i] << std::endl;
+	   dest[i]=data[i];
+      }
+  
+  }
 };
 
 struct BF16Vec16 : public Vec<BF16Vec16> {
@@ -413,9 +431,14 @@ namespace c10 {
 }
 
 template <> inline void storeFP32<c10::BFloat16>(float v, c10::BFloat16 *ptr) {
-  c10::BFloat16 __attribute__((__may_alias__)) *v_ptr =
-      reinterpret_cast<c10::BFloat16 *>(&v);
-  *ptr = *(v_ptr + 1);
+//  c10::BFloat16 __attribute__((__may_alias__)) *v_ptr =
+//      reinterpret_cast<c10::BFloat16 *>(&v);
+//  *ptr = *(v_ptr + 1);
+    uint32_t temp;
+    memcpy(&temp, &v, sizeof(float));
+    temp = htonl(temp);
+    temp = temp >> 16;
+    memcpy(ptr, &temp, sizeof(c10::BFloat16));
 }
 
 #ifndef __VEC_CLASS_FP_NAN
@@ -475,6 +498,17 @@ inline __vector bool int vec_test_data_class(__vector unsigned int a, unsigned i
 }
 
 inline BF16Vec8::BF16Vec8(const FP32Vec8 &v) {
+
+  std::cout << "FP32 -> BF16 Conversion Debug:" << std::endl;
+  for (int i = 0; i < 8; i++) {
+      float original_fp32 = reinterpret_cast<const float*>(&v.reg.val[0])[i];
+      std::cout << "FP32[" << i << "]: " << original_fp32 << " -> ";
+      // Mimic conversion to display what happens
+      uint32_t as_int = *reinterpret_cast<uint32_t*>(&original_fp32);
+      uint16_t truncated = (as_int >> 16) & 0xFFFF;
+      std::cout << "BF16[" << i << "]: " << truncated << std::endl;
+  }  
+
   // Assuming FP32Vec8::reg is a type that allows direct access as __vector unsigned int
   __vector unsigned int inp0 = (__vector unsigned int)(v.reg.val[0]);
   __vector unsigned int inp1 = (__vector unsigned int)(v.reg.val[1]);

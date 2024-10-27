@@ -1,0 +1,239 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/root/miniconda3/envs/torch/share/cmake-3.26/Modules/CMakeDetermineSystem.cmake:204 (message)"
+      - "CMakeLists.txt:14 (project)"
+    message: |
+      The system is: Linux - 5.14.0-427.13.1.el9_4.s390x - s390x
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/root/miniconda3/envs/torch/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/root/miniconda3/envs/torch/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/root/miniconda3/envs/torch/share/cmake-3.26/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:14 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/local/bin/c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /root/vllm_s390x/vllm/build/temp.linux-s390x-cpython-39/CMakeFiles/3.26.4/CompilerIdCXX/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/root/miniconda3/envs/torch/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/root/miniconda3/envs/torch/share/cmake-3.26/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:14 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/root/vllm_s390x/vllm/build/temp.linux-s390x-cpython-39/CMakeFiles/CMakeScratch/TryCompile-4p3NeH"
+      binary: "/root/vllm_s390x/vllm/build/temp.linux-s390x-cpython-39/CMakeFiles/CMakeScratch/TryCompile-4p3NeH"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: /root/vllm_s390x/vllm/build/temp.linux-s390x-cpython-39/CMakeFiles/CMakeScratch/TryCompile-4p3NeH
+        
+        Run Build Command(s):/root/miniconda3/envs/torch/bin/ninja -v cmTC_d3704 && [1/2] /usr/local/bin/c++   -v -o CMakeFiles/cmTC_d3704.dir/CMakeCXXCompilerABI.cpp.o -c /root/miniconda3/envs/torch/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/usr/local/bin/c++
+        Target: s390x-ibm-linux-gnu
+        Configured with: ./configure --disable-multilib --enable-languages=c,c++ --prefix=/usr/local
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 12.3.0 (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_d3704.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-m64' '-mzarch' '-march=z900' '-dumpdir' 'CMakeFiles/cmTC_d3704.dir/'
+         /usr/local/libexec/gcc/s390x-ibm-linux-gnu/12.3.0/cc1plus -quiet -v -D_GNU_SOURCE /root/miniconda3/envs/torch/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_d3704.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -m64 -mzarch -march=z900 -version -o /tmp/cch2NY0u.s
+        GNU C++17 (GCC) version 12.3.0 (s390x-ibm-linux-gnu)
+        	compiled by GNU C version 12.3.0, GMP version 6.2.0, MPFR version 4.1.0-p9, MPC version 1.2.1, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../../s390x-ibm-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../../include/c++/12.3.0
+         /usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../../include/c++/12.3.0/s390x-ibm-linux-gnu
+         /usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../../include/c++/12.3.0/backward
+         /usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/include
+         /usr/local/include
+         /usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/include-fixed
+         /usr/include
+        End of search list.
+        GNU C++17 (GCC) version 12.3.0 (s390x-ibm-linux-gnu)
+        	compiled by GNU C version 12.3.0, GMP version 6.2.0, MPFR version 4.1.0-p9, MPC version 1.2.1, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: c7884fdca2616628c0e2ae13e488398b
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_d3704.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-m64' '-mzarch' '-march=z900' '-dumpdir' 'CMakeFiles/cmTC_d3704.dir/'
+         as -v -m64 -mzarch -march=z900 -o CMakeFiles/cmTC_d3704.dir/CMakeCXXCompilerABI.cpp.o /tmp/cch2NY0u.s
+        GNU assembler version 2.35.2 (s390x-redhat-linux) using BFD version version 2.35.2-43.el9
+        COMPILER_PATH=/usr/local/libexec/gcc/s390x-ibm-linux-gnu/12.3.0/:/usr/local/libexec/gcc/s390x-ibm-linux-gnu/12.3.0/:/usr/local/libexec/gcc/s390x-ibm-linux-gnu/:/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/:/usr/local/lib/gcc/s390x-ibm-linux-gnu/
+        LIBRARY_PATH=/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/:/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_d3704.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-m64' '-mzarch' '-march=z900' '-dumpdir' 'CMakeFiles/cmTC_d3704.dir/CMakeCXXCompilerABI.cpp.'
+        [2/2] : && /usr/local/bin/c++  -v CMakeFiles/cmTC_d3704.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_d3704   && :
+        Using built-in specs.
+        COLLECT_GCC=/usr/local/bin/c++
+        COLLECT_LTO_WRAPPER=/usr/local/libexec/gcc/s390x-ibm-linux-gnu/12.3.0/lto-wrapper
+        Target: s390x-ibm-linux-gnu
+        Configured with: ./configure --disable-multilib --enable-languages=c,c++ --prefix=/usr/local
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 12.3.0 (GCC) 
+        COMPILER_PATH=/usr/local/libexec/gcc/s390x-ibm-linux-gnu/12.3.0/:/usr/local/libexec/gcc/s390x-ibm-linux-gnu/12.3.0/:/usr/local/libexec/gcc/s390x-ibm-linux-gnu/:/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/:/usr/local/lib/gcc/s390x-ibm-linux-gnu/
+        LIBRARY_PATH=/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/:/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d3704' '-shared-libgcc' '-m64' '-mzarch' '-march=z900' '-dumpdir' 'cmTC_d3704.'
+         /usr/local/libexec/gcc/s390x-ibm-linux-gnu/12.3.0/collect2 -plugin /usr/local/libexec/gcc/s390x-ibm-linux-gnu/12.3.0/liblto_plugin.so -plugin-opt=/usr/local/libexec/gcc/s390x-ibm-linux-gnu/12.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cchXiSFt.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf64_s390 -dynamic-linker /lib/ld64.so.1 -o cmTC_d3704 /lib/../lib64/crt1.o /lib/../lib64/crti.o /usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/crtbegin.o -L/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0 -L/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../.. CMakeFiles/cmTC_d3704.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/crtend.o /lib/../lib64/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d3704' '-shared-libgcc' '-m64' '-mzarch' '-march=z900' '-dumpdir' 'cmTC_d3704.'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/root/miniconda3/envs/torch/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/root/miniconda3/envs/torch/share/cmake-3.26/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:14 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../../include/c++/12.3.0]
+          add: [/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../../include/c++/12.3.0/s390x-ibm-linux-gnu]
+          add: [/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../../include/c++/12.3.0/backward]
+          add: [/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/include]
+          add: [/usr/local/include]
+          add: [/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/include-fixed]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../../include/c++/12.3.0] ==> [/usr/local/include/c++/12.3.0]
+        collapse include dir [/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../../include/c++/12.3.0/s390x-ibm-linux-gnu] ==> [/usr/local/include/c++/12.3.0/s390x-ibm-linux-gnu]
+        collapse include dir [/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../../include/c++/12.3.0/backward] ==> [/usr/local/include/c++/12.3.0/backward]
+        collapse include dir [/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/include] ==> [/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/include-fixed] ==> [/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/include-fixed]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/local/include/c++/12.3.0;/usr/local/include/c++/12.3.0/s390x-ibm-linux-gnu;/usr/local/include/c++/12.3.0/backward;/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/include;/usr/local/include;/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/include-fixed;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/root/miniconda3/envs/torch/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake:152 (message)"
+      - "/root/miniconda3/envs/torch/share/cmake-3.26/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:14 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: /root/vllm_s390x/vllm/build/temp.linux-s390x-cpython-39/CMakeFiles/CMakeScratch/TryCompile-4p3NeH]
+        ignore line: []
+        ignore line: [Run Build Command(s):/root/miniconda3/envs/torch/bin/ninja -v cmTC_d3704 && [1/2] /usr/local/bin/c++   -v -o CMakeFiles/cmTC_d3704.dir/CMakeCXXCompilerABI.cpp.o -c /root/miniconda3/envs/torch/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/local/bin/c++]
+        ignore line: [Target: s390x-ibm-linux-gnu]
+        ignore line: [Configured with: ./configure --disable-multilib --enable-languages=c c++ --prefix=/usr/local]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 12.3.0 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_d3704.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-m64' '-mzarch' '-march=z900' '-dumpdir' 'CMakeFiles/cmTC_d3704.dir/']
+        ignore line: [ /usr/local/libexec/gcc/s390x-ibm-linux-gnu/12.3.0/cc1plus -quiet -v -D_GNU_SOURCE /root/miniconda3/envs/torch/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_d3704.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -m64 -mzarch -march=z900 -version -o /tmp/cch2NY0u.s]
+        ignore line: [GNU C++17 (GCC) version 12.3.0 (s390x-ibm-linux-gnu)]
+        ignore line: [	compiled by GNU C version 12.3.0  GMP version 6.2.0  MPFR version 4.1.0-p9  MPC version 1.2.1  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../../s390x-ibm-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../../include/c++/12.3.0]
+        ignore line: [ /usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../../include/c++/12.3.0/s390x-ibm-linux-gnu]
+        ignore line: [ /usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../../include/c++/12.3.0/backward]
+        ignore line: [ /usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/include-fixed]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C++17 (GCC) version 12.3.0 (s390x-ibm-linux-gnu)]
+        ignore line: [	compiled by GNU C version 12.3.0  GMP version 6.2.0  MPFR version 4.1.0-p9  MPC version 1.2.1  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: c7884fdca2616628c0e2ae13e488398b]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_d3704.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-m64' '-mzarch' '-march=z900' '-dumpdir' 'CMakeFiles/cmTC_d3704.dir/']
+        ignore line: [ as -v -m64 -mzarch -march=z900 -o CMakeFiles/cmTC_d3704.dir/CMakeCXXCompilerABI.cpp.o /tmp/cch2NY0u.s]
+        ignore line: [GNU assembler version 2.35.2 (s390x-redhat-linux) using BFD version version 2.35.2-43.el9]
+        ignore line: [COMPILER_PATH=/usr/local/libexec/gcc/s390x-ibm-linux-gnu/12.3.0/:/usr/local/libexec/gcc/s390x-ibm-linux-gnu/12.3.0/:/usr/local/libexec/gcc/s390x-ibm-linux-gnu/:/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/:/usr/local/lib/gcc/s390x-ibm-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/:/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_d3704.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-m64' '-mzarch' '-march=z900' '-dumpdir' 'CMakeFiles/cmTC_d3704.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [[2/2] : && /usr/local/bin/c++  -v CMakeFiles/cmTC_d3704.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_d3704   && :]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/local/bin/c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/local/libexec/gcc/s390x-ibm-linux-gnu/12.3.0/lto-wrapper]
+        ignore line: [Target: s390x-ibm-linux-gnu]
+        ignore line: [Configured with: ./configure --disable-multilib --enable-languages=c c++ --prefix=/usr/local]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 12.3.0 (GCC) ]
+        ignore line: [COMPILER_PATH=/usr/local/libexec/gcc/s390x-ibm-linux-gnu/12.3.0/:/usr/local/libexec/gcc/s390x-ibm-linux-gnu/12.3.0/:/usr/local/libexec/gcc/s390x-ibm-linux-gnu/:/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/:/usr/local/lib/gcc/s390x-ibm-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/:/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_d3704' '-shared-libgcc' '-m64' '-mzarch' '-march=z900' '-dumpdir' 'cmTC_d3704.']
+        link line: [ /usr/local/libexec/gcc/s390x-ibm-linux-gnu/12.3.0/collect2 -plugin /usr/local/libexec/gcc/s390x-ibm-linux-gnu/12.3.0/liblto_plugin.so -plugin-opt=/usr/local/libexec/gcc/s390x-ibm-linux-gnu/12.3.0/lto-wrapper -plugin-opt=-fresolution=/tmp/cchXiSFt.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --eh-frame-hdr -m elf64_s390 -dynamic-linker /lib/ld64.so.1 -o cmTC_d3704 /lib/../lib64/crt1.o /lib/../lib64/crti.o /usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/crtbegin.o -L/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0 -L/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../.. CMakeFiles/cmTC_d3704.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/crtend.o /lib/../lib64/crtn.o]
+          arg [/usr/local/libexec/gcc/s390x-ibm-linux-gnu/12.3.0/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/local/libexec/gcc/s390x-ibm-linux-gnu/12.3.0/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/local/libexec/gcc/s390x-ibm-linux-gnu/12.3.0/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cchXiSFt.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf64_s390] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib/ld64.so.1] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_d3704] ==> ignore
+          arg [/lib/../lib64/crt1.o] ==> obj [/lib/../lib64/crt1.o]
+          arg [/lib/../lib64/crti.o] ==> obj [/lib/../lib64/crti.o]
+          arg [/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/crtbegin.o] ==> obj [/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/crtbegin.o]
+          arg [-L/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0] ==> dir [/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0]
+          arg [-L/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../../lib64] ==> dir [/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../..] ==> dir [/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../..]
+          arg [CMakeFiles/cmTC_d3704.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/crtend.o] ==> obj [/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/crtend.o]
+          arg [/lib/../lib64/crtn.o] ==> obj [/lib/../lib64/crtn.o]
+        collapse obj [/lib/../lib64/crt1.o] ==> [/lib64/crt1.o]
+        collapse obj [/lib/../lib64/crti.o] ==> [/lib64/crti.o]
+        collapse obj [/lib/../lib64/crtn.o] ==> [/lib64/crtn.o]
+        collapse library dir [/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0] ==> [/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0]
+        collapse library dir [/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../../../lib64] ==> [/usr/local/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/../../..] ==> [/usr/local/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/lib64/crt1.o;/lib64/crti.o;/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/crtbegin.o;/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0/crtend.o;/lib64/crtn.o]
+        implicit dirs: [/usr/local/lib/gcc/s390x-ibm-linux-gnu/12.3.0;/usr/local/lib64;/lib64;/usr/lib64;/usr/local/lib]
+        implicit fwks: []
+      
+      
+...

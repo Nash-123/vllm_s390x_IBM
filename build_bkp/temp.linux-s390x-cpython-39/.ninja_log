@@ -1,0 +1,11 @@
+# ninja log v5
+0	9701	1729441718761118944	CMakeFiles/_core_C.dir/csrc/core/torch_bindings.cpp.o	1b5d3f8298a494f8
+9702	9837	1729441718901118944	_core_C.abi3.so	a13ab23c6955841
+1	13685	1729441722741118944	CMakeFiles/_C.dir/csrc/cpu/layernorm.cpp.o	ae243ab7a356961a
+0	13787	1729441722841118944	CMakeFiles/_C.dir/csrc/cpu/utils.cpp.o	151ecdaf24b107c4
+1	13835	1729441722891118944	CMakeFiles/_C.dir/csrc/cpu/pos_encoding.cpp.o	c77cdf4614587be6
+0	13984	1729441723041118944	CMakeFiles/_C.dir/csrc/cpu/activation.cpp.o	dff0def58241e102
+0	15106	1729441724161118944	CMakeFiles/_C.dir/csrc/cpu/cache.cpp.o	ad15015c8b26eda2
+1	20295	1729441729341118944	CMakeFiles/_C.dir/csrc/cpu/torch_bindings.cpp.o	40f110f2c729f471
+0	21871	1729441730921118944	CMakeFiles/_C.dir/csrc/cpu/attention.cpp.o	2d0d1454c921fd2e
+21871	22129	1729441731191118944	_C.abi3.so	11e430afd54b8758
